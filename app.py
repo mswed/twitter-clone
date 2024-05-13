@@ -390,3 +390,5 @@ def create_app(database='postgresql:///warbler', csrf=True):
         return req
 
     return app
+
+app = create_app()
