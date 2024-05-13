@@ -90,7 +90,8 @@ def create_app(database='postgresql:///warbler', csrf=True):
                 )
                 db.session.commit()
 
-            except IntegrityError:
+            except IntegrityError as e:
+                print(e)
                 flash("Username already taken", 'danger')
                 return render_template('users/signup.html', form=form)
 
